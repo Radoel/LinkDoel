@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafi's Digital Portfolio</title>
+    <link rel="icon" href="images/Logo Doel.png" alt="image/icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #2d3748;
+            --light: #f7fafc;
+            --gray: #a0aec0;
+            --shadow: rgba(102, 126, 234, 0.15);
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 40px 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            box-shadow: 0 8px 24px var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .username {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .handle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .bio {
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-style: italic;
+            background: rgba(102, 126, 234, 0.05);
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .links-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
+        }
+
+        .link-icon {
+            font-size: 24px;
+            margin-right: 16px;
+            min-width: 32px;
+        }
+
+        .link-text {
+            flex: 1;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .link-arrow {
+            font-size: 16px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .link-button:hover .link-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .instagram:hover { color: #e1306c; }
+        .tiktok:hover { color: #000000; }
+        .email:hover { color: #ea4335; }
+        .website:hover { color: #4285f4; }
+        .github:hover { color: #333; }
+        .youtube:hover { color: #ff0000; }
+        .linkedin:hover { color: #0077b5; }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 32px 24px;
+                margin: 10px;
+                max-width: 95%;
+                border-radius: 20px;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .username {
+                font-size: 24px;
+            }
+
+            .link-button {
+                padding: 16px 20px;
+                font-size: 14px;
+            }
+
+            .link-icon {
+                font-size: 22px;
+                margin-right: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="images/Rafi.jpg" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            </div>
+            <div class="username">Muhamad Raafi Naufal</div>
+            <div class="handle">@Radoel</div>
+            <div class="bio">Enjoy the pleasure of swallowing the bitterness</div>
+        </div>
+
+        <div class="links-section">
+            <a href="https://www.instagram.com/raafi_doel/profilecard/?igsh=MTJpaHJvZmg1eGNueQ==" class="link-button instagram" target="_blank">
+                <i class="bi bi-instagram link-icon"></i>
+                <span class="link-text">Instagram</span>
+                <i class="bi bi-arrow-right link-arrow"></i>
+            </a>
+            <a href="https://tiktok.com/raafi_doel" class="link-button tiktok" target="_blank">
+                <i class="bi bi-tiktok link-icon"></i>
+                <span class="link-text">TikTok</span>
+                <i class="bi bi-arrow-right link-arrow"></i>
+            </a>
+            <a href="mailto:raafinaufal23@gmail.com" class="link-button email">
+                <i class="bi bi-envelope-fill link-icon"></i>
+                <span class="link-text">Email</span>
+                <i class="bi bi-arrow-right link-arrow"></i>
+            </a>
+            <a href="https://portofolio-raafi-naufal.vercel.app/" class="link-button website" target="_blank">
+                <i class="bi bi-globe2 link-icon"></i>
+                <span class="link-text">Website</span>
+                <i class="bi bi-arrow-right link-arrow"></i>
+            </a>
+            <a href="https://github.com/Radoel" class="link-button github" target="_blank">
+                <i class="bi bi-github link-icon"></i>
+                <span class="link-text">GitHub</span>
+                <i class="bi bi-arrow-right link-arrow"></i>
+            </a>
+            <a href="https://youtube.com/@doelpholoboz?si=ORr1WOJHrE9jQfNl" class="link-button youtube" target="_blank">
+                <i class="bi bi-youtube link-icon"></i>
+                <span class="link-text">YouTube</span>
+                <i class="bi bi-arrow-right link-arrow"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/muhamad-raafi-naufal-16896b347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="link-button linkedin" target="_blank">
+                <i class="bi bi-linkedin link-icon"></i>
+                <span class="link-text">LinkedIn</span>
+                <i class="bi bi-arrow-right link-arrow"></i>
+            </a>
+        </div>
+
+        <div class="footer">
+            Crafted with passion
+        </div>
+    </div>
+</body>
+</html>
